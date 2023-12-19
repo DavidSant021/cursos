@@ -1,0 +1,31 @@
+body {
+    background: black url(imagens/C360_2012-11-19-17-59-02.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #248030;
+    color: white;
+    border-radius: 5px;
+}
+
+main {
+    background-color: #ffff8c;
+    border-radius: 5px;
+}
+
+a {
+    color: #248030;
+}
+
+button {
+    background-color: #248030;
+    border: 2px solid #248030;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: white;
+    border-radius: 5px;
+}

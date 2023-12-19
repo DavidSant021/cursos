@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviando Valores do DOM para o JavaScript</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Enviando Valores do DOM para o JavaScript</h1>
+    <hr>
+
+    <h2>Registre-se!</h2>
+    <section>
+        <label for="username">Nome de Usuário: </label>
+        <input type="text" name="username" id="username" placeholder="Seu nome de usuário" required>
+        <br>
+        <label for="password">Senha: </label>
+        <input type="password" name="password" id="password" placeholder="Insira sua senha" required>
+        <br>
+        <label for="passwordConfirmation">Confirme sua senha: </label>
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirme sua senha" required>
+        <br>
+        <button onclick="register(this.parentNode)">Registrar</button>
+    </section>
+</body>
+</html>

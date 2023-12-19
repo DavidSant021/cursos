@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Formulário de Inscrição</h1>
+    <form action="" method="get" autocomplete="on">
+        <div>
+            <label for="inome">Nome:</label><br>
+            <input type="text" name="nome" id="inome" placeholder="Seu nome:" autocomplete="name" required>
+        </div>
+        <div>
+            <label for="iemail">Email:</label><br>
+            <input type="email" name="email" id="iemail" placeholder="Seu email" autocomplete="email" required>
+        </div>
+        <div>
+            <label for="itel">WhatsApp:</label><br>
+            <input type="tel" name="tel" id="itel" autocomplete="tel" required>
+        </div>
+        <div>
+            <label>Área de atuação:</label><br>
+            <input type="radio" name="area" id="desenvolvimento" value="desenvolvimento">
+            <label for="desenvolvimento">Desenvolvimento</label>
+            <input type="radio" name="area" id="quality" value="quality-assurance">
+            <label for="quality">Quality Assurance (QA)</label>
+            <input type="radio" name="area" id="analise" value="analise-de-dados">
+            <label for="analise">Análise de Dados</label>
+            <input type="radio" name="area" id="infraestrutura" value="infraestrutura">
+            <label for="infraestrutura">Infraestrutura</label>
+        </div>
+        <div>
+            <label for="iobs">Observações:</label><br>
+            <textarea name="obs" id="iobs" cols="40" rows="4"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="check" id="icheck">
+            <label for="icheck">Desejo receber novidades e ofertas por email.</label>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
