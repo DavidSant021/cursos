@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Devs</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <h1>Cadastro de Desenvolvedores</h1>
+    <hr>
+    <form id="register-form" autocomplete="on">
+        <label for="name">Nome: </label>
+        <input type="text" name="name" id="name" placeholder="Insira seu nome" autocomplete="name">
+        <br>
+        <label>Tecnologias: </label>
+        <br>
+        <button id="add-technology" type="button">Adicionar nova tecnologia</button>
+        <ul id="stackInputs"></ul>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
