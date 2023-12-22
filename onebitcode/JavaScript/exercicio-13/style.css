@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background-color: lightslategrey;
     color: #232323;
 }
 
@@ -77,3 +78,10 @@ button:hover {
     font-size: 5rem;
 }
 
+#gameBoard span.win {
+    background-color: #25a340;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
