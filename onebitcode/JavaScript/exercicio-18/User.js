@@ -13,6 +13,6 @@ class User {
     }
 }
 
-const david = new User('David Santiago', 'davidsantiago2020dg@gmail.com', 26324915)
+const david = new User('David Santiago', 'david@gmail.com', 12345678)
 console.log(david)
-david.login('davidsantiago2020dg@gmail.com', 26324915)
+david.login('david@gmail.com', 12345678)
