@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Olá, mundo!",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus inventore voluptatem, eum repellat sed officiis aliquam",
+      "author": "Isaac"
+    },
+    {
+      "id": "2",
+      "title": "Requisições POST com Javascript",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus inventore voluptatem, eum repellat sed officiis aliquam",
+      "author": "Isaac"
+    },
+    {
+      "id": "2dca",
+      "title": "Aprendendo JavaScript",
+      "author": "David",
+      "content": "Lorem Ipsum"
+    },
+    {
+      "id": "38fe",
+      "title": "Meu quarto artigo",
+      "author": "David",
+      "content": "este é meu quarto artigo. yea '_'"
+    }
+  ]
+}
