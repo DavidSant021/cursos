@@ -1,0 +1,14 @@
+{
+  "name": "aula-07-criando-tipos",
+  "version": "1.0.0",
+  "description": "aula sobre criação de tipos em typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --watch"
+  },
+  "author": "David",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
