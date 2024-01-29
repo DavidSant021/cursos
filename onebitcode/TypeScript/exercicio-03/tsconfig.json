@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "outDir": "public",
+        "target": "ES2015"
+    }
+}
