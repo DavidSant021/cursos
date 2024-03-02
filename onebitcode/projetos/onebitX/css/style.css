@@ -89,12 +89,12 @@
 
 .shortTitle {
   width: 550px;
-  margin-bottom: -25px;
+  margin-bottom: 25px;
 }
 
 .mediumTitle {
   width: 650px;
-  margin-bottom: -25px;
+  margin-bottom: 25px;
 }
 
 @media (max-width: 750px) {
