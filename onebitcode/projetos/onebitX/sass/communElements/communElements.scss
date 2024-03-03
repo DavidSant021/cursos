@@ -58,6 +58,20 @@
 
 // Media query
 
+@media (max-width: 501px) {
+    .downloadDesc {
+        button {
+            margin: 10px 0px;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .falcon9Desc {
+        margin-top: 30px;
+    }
+}
+
 @media (max-width: 405px) {
     .logoPc {
         width: 180px;
