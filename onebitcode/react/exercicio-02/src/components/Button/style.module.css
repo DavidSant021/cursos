@@ -1,4 +1,4 @@
-.button {
+.wrapper {
     background-color: #121212;
     border: 0;
     border-radius: .5rem;
@@ -10,7 +10,7 @@
     transition: .3s;
 }
 
-.button:hover {
+.wrapper:hover {
     cursor: pointer;
     margin-left: .5rem;
 }
