@@ -1,0 +1,23 @@
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.avatarImg {
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+.titleContent {
+    margin-bottom: 25px;
+}
+
+.informations {
+    margin-bottom: 25px;
+}
