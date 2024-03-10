@@ -2,8 +2,13 @@ import Card from "./components/Card"
 
 export default function App() {
   return (
-    <div className="app">
+    <>
       <Card />
-    </div>
+      <Card />
+      <Card />
+    </>
   )
 }
+
+// import { Fragment } from "react"
+// <Fragment></Fragment> no lugar do <> </>
