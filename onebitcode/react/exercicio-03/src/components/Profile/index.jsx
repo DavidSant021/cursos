@@ -4,13 +4,21 @@ export default function Profile({avatar, name, bio, phone, email, githubUrl, lin
     return (
         <div className={style.container}>
             <img className={style.avatarImg} src={avatar} alt="Foto" />
-            <h1 className={style.titleContent}>{name}</h1>
-            <p className={style.informations}>{bio}</p>
+            <div className={style.div}>
+                <h1 className={style.titleContent}>{name}</h1>
+            </div>
+            <div className={style.div}>
+                <p className={style.informations}>{bio}</p>
+            </div>
+            <div className={style.div}>
             <p className={style.informations}>{phone}</p>
+            </div>
+            <div className={style.div}>
             <p className={style.informations}>{email}</p>
-            <a className={style.socialMedia} href={githubUrl} >GitHub</a>
-            <a className={style.socialMedia} href={linkedinUrl} >LinkedIn</a>
-            <a className={style.socialMedia} href={twitterUrl} >Twitter</a>
+            </div>
+            <a style={{marginTop: "10px"}} className={style.socialMedia} href={githubUrl} target="_blank" >GitHub</a>
+            <a className={style.socialMedia} href={linkedinUrl} target="_blank" >LinkedIn</a>
+            <a className={style.socialMedia} href={twitterUrl} target="_blank" >Twitter</a>
         </div>
     )
 }
