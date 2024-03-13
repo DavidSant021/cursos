@@ -19,3 +19,15 @@
     gap: 1rem;
     align-items: center;
 }
+
+.followButton {
+    margin-left: 1rem;
+    padding: .125rem .5rem;
+    border: 1px solid rgb(51, 137, 211);
+    border-radius: 5px;
+
+    &:hover {
+        background-color: rgb(51, 137, 211);
+        color: white;
+    }
+}
