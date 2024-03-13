@@ -7,7 +7,7 @@ import styles from "./style.module.css"
 
 export default function Profile({ avatar, name, bio, phone, email, githubUrl, linkedinUrl, twitterUrl }) {
 
-    // [valor, funçãoModificadora]
+    //    [valor, funçãoModificadora]
     const [followText, setFollowText] = useState("Follow")
 
     function handleClick() {
