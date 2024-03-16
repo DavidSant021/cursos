@@ -4,12 +4,12 @@ export default function App() {
 
   const [password, setPassword] = useState('');
   const [copyText, setCopyText] = useState('Copiar!');
+  const [passwordSize, setPasswordSize] = useState(12);
 
   function generate() {
     const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
-    const length = 12
     let newPassword = ""
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < passwordSize; i++) {
       const position = Math.floor(Math.random() * characters.length)
       newPassword += characters[position]
     }
@@ -32,6 +32,16 @@ export default function App() {
         }}
       />
       <h1 className="titleContent">Gerador de senhas React</h1>
+      <div>
+        <label htmlFor="passwordSize">Size:</label>
+        <input 
+          type="number" 
+          id="passwordSize" 
+          min={1}
+          max={30}
+          value={passwordSize}
+          onChange={(ev) => setPasswordSize(ev.target.value)} />
+      </div>
       <div>
         <button className="button button-1" onClick={generate}>Gerar!</button>
         <button className="button button-2" onClick={copyToClipboard}>{copyText}</button>
