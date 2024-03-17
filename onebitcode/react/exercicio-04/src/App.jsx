@@ -5,7 +5,10 @@ export default function App() {
 
   const [password, setPassword] = useState('');
   const [copyText, setCopyText] = useState('Copiar!');
-  const [passwordSize, setPasswordSize] = useState(12);
+  const [customSize, setCustomSize] = useState(12);
+  const [showInput, setShowInput] = useState(false);
+
+  const passwordSize = showInput ? customSize : 8
 
   function generate() {
     const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
@@ -34,11 +37,21 @@ export default function App() {
       />
       <h1 className="titleContent">Gerador de senhas React</h1>
       <div>
-        <label htmlFor="passwordSize">Size:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize}/>
+        <label htmlFor="showInput">Size Custom:</label>
+        <input 
+          type="checkbox" 
+          id="showInput"
+          value={showInput}
+          onChange={() => setShowInput(currentState => !currentState)} />
       </div>
+      {showInput ? (
+        <div>
+          <label htmlFor="passwordSize">Size:</label>
+          <Input passwordSize={customSize} setPasswordSize={setCustomSize}/>
+        </div>
+      ) : null}
       <div>
-        <button className="button button-1" onClick={generate}>Gerar!</button>
+        <button className="button button-1" onClick={generate}>Gerar senha de {passwordSize} caracteres!</button>
         <button className="button button-2" onClick={copyToClipboard}>{copyText}</button>
       </div>
       <div>{password}</div>
