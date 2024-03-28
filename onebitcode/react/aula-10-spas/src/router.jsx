@@ -4,6 +4,7 @@ import Products from "./pages/Products"
 import Cart from "./pages/Cart"
 import AdminHome from "./pages/admin/Admin"
 import RootLayout from "./pages/RootLayout"
+import Product from "./pages/Product"
 
 const router = createBrowserRouter([
     {
@@ -13,10 +14,13 @@ const router = createBrowserRouter([
             index: true,
             element: <Home />
         }, {
-            path: "/products",
+            path: "products",
             element: <Products />
         }, {
-            path: "/cart",
+            path: "products/:productId",
+            element: <Product />
+        }, {
+            path: "cart",
             element: <Cart />
         }]
     },
