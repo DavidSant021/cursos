@@ -1,6 +1,6 @@
-import { useRef, useState } from "react"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import StockItem, { CATEGORIES } from "../entities/StockItem"
+import { useRef, useState } from "react"
 import useStock from "../hooks/useStock"
 
 ItemForm.propTypes = {
@@ -9,32 +9,38 @@ ItemForm.propTypes = {
 
 export default function ItemForm({ itemToUpdate }) {
     const defaultItem = {
-        name: '',
-        description: '',
+        name: "",
+        description: "",
         quantity: 0,
         price: 0,
-        category: ''
+        category: ""
     }
 
     const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem)
-    const { addItem } = useStock()
+    const { addItem, updateItem } = useStock()
     const inputRef = useRef(null)
 
     const handleChange = (ev) => {
-        setItem((current) => ({...current, [ev.target.name]: ev.target.value}))
+        setItem((current) => ({ ...current, [ev.target.name]: ev.target.value }))
     }
 
     const handleSubmit = (ev) => {
         ev.preventDefault()
-        
         try {
-            const validItem = new StockItem(item)
-            addItem(validItem)
-            setItem(defaultItem)
-            alert('Item cadastrado com sucesso!')
-            inputRef.current.focus()
+            if (itemToUpdate) {
+                updateItem(itemToUpdate.id, item)
+                alert("Item atualizado com sucesso!")
+            } else {
+                const validItem = new StockItem(item)
+                addItem(validItem)
+                setItem(defaultItem)
+                alert("Item cadastrado com sucesso!")
+            }
         } catch (err) {
             console.log(err.message)
+            alert("Ocorreu um erro.")
+        } finally {
+            inputRef.current.focus()
         }
     }
 
