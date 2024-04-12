@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button, Card, CardBody, CardSubtitle } from "reactstrap";
@@ -17,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <>
             <Card>
                 <Link href={`/products/${id}`}>
-                    <Image className="card-img-top" src={imageUrl} alt={product.name} height={400} width={600} />
+                    <img className="card-img-top" src={imageUrl} alt="Product" height={300} width={400}/>
                 </Link>
 
                 <CardBody>
