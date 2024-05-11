@@ -1,12 +1,28 @@
 const http = require('node:http');
 
+// Criação do servidor
 const server = http.createServer((req, res) => {
-    console.log(req.method);
-    console.log(req.url);
-    res.statusCode = 404;
-    res.end('<h1>Hello World</h1>');
+    const path = req.url
+
+    switch (path) {
+        case '/':
+            res.writeHead(200)
+            res.write('Você está na página inicial!')
+            break
+        case '/artigos':
+            res.writeHead(200)
+            res.write('Você está na página de artigos!')
+            break
+        default:
+            res.writeHead(404)
+            res.write('Caminho não encontrado!')
+            break
+    }
+
+    res.end()
 });
 
-server.listen(3000, () => {
+const PORT = 3000
+server.listen(PORT, () => {
     console.log("Servidor Ativo!")
 })
