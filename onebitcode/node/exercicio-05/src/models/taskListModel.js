@@ -13,23 +13,22 @@ module.exports = {
         return taskLists.find(list => list.id === id)
     },
 
-    createTaskList: (title) => {
+    createList: (title) => {
         const newList = {
             id: Math.floor(Math.random() * 99999999).toString(),
             title: title,
             tasks: []
         }
-
         return newList
     },
 
     saveList: (taskList) => {
-        if (taskList.title === '') throw new Error('Titulo da Lista não pode ficar vazio')
+        if (taskList.title === '') throw new Error('Título da lista não pode ficar vazio.')
         taskLists.push(taskList)
     },
 
-    deleteList: (id) => {
-        const listIndex = taskLists.findIndex(list => list.id === id)
+    deleteList: (listId) => {
+        const listIndex = taskLists.findIndex(list => list.id === listId)
         taskLists.splice(listIndex, 1)
     },
 
@@ -39,7 +38,6 @@ module.exports = {
             title: taskTitle,
             completed: false
         }
-
         taskLists.find(list => list.id === listId).tasks.push(newTask)
     },
 
