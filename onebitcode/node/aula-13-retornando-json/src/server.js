@@ -18,5 +18,8 @@ app.post('/games/:id/genres', gamesController.addGenre)
 
 app.put('/games/:id', gamesController.update)
 
+app.delete('/games/:id', gamesController.delete)
+app.delete('/games/:id/genres/:name', gamesController.removeGenre)
+
 const PORT = 3000
 app.listen(PORT, () => console.log(`Servidor iniciado! Rodando em http://localhost:${PORT}`))
