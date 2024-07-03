@@ -7,7 +7,7 @@ const users = [
 ]
 
 module.exports = {
-    gettAllUsers: () => users,
+    getAllUsers: () => users,
 
     getUserById: (id) => users.find(user => user.id === id),
 
