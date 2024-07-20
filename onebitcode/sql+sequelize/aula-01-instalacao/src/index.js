@@ -1,13 +1,16 @@
-const express = require("express")
-const router = require("./routes")
-const app = express()
+const express = require("express");
+const router = require("./routes");
 
-app.use(express.json())
+require("../config//associations");
 
-app.use('/api', router)
+const app = express();
 
-const PORT = process.env.PORT || 3000
+app.use(express.json());
+
+app.use("/api", router);
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Servidor iniciado em http://localhost:${PORT}`)
-})
+  console.log(`Servidor iniciado em http://localhost:${PORT}`);
+});
