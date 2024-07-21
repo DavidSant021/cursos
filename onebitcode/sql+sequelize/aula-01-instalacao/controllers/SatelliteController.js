@@ -20,7 +20,10 @@ module.exports = {
     const { planetId } = req.params;
 
     const planet = await Planet.findByPk(planetId, {
-      include: Satellite,
+      include: {
+        model: Satellite,
+        as: 'satellites'
+      }
     });
 
     if (!planet) {

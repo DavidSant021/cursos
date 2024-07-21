@@ -1,11 +1,9 @@
 "use strict";
 
-const { INTEGER } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("satellites", {
+    await queryInterface.createTable("capSpaceship", {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -13,19 +11,18 @@ module.exports = {
         primaryKey: true,
       },
 
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-
-      serial_number: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-
-      planetId: {
+      capId: {
         type: Sequelize.INTEGER,
-        references: { model: "planets", key: "id" },
+        allowNull: false,
+        references: { model: "caps", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
+
+      spaceshipId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: "spaceships", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
@@ -41,6 +38,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("satellites");
+    await queryInterface.dropTable("capSpaceship");
   },
 };
