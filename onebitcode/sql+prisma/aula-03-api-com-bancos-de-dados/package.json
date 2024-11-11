@@ -1,0 +1,16 @@
+{
+  "name": "aula-03-api-com-bancos-de-dados",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "db:sync": "node ./src/database/sync-database.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "pg": "^8.13.1"
+  }
+}
