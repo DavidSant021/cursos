@@ -15,17 +15,20 @@ const productsController = {
 
     //GET /products/:id
     show: async (req, res) => {
-        
+        const product = await Product.findById(req.params.id)
+        res.status(200).json(product)
     },
 
     //PUT /products/:id
     update: async (req, res) => {
-        
+        const updatedProduct = await Product.update(req.params.id, req.body)
+        res.json(updatedProduct)
     },
 
     //DELETE /products/:id
     delete: async (req, res) => {
-        
+        const result = await Product.delete(req.params.id)
+        res.json(result)
     }
 }
 
