@@ -16,4 +16,9 @@ router.post("/customers", customersController.create);
 router.put("/customers/:id", customersController.update);
 router.delete("/customers/:id", customersController.delete);
 
+router.get("/orders", ordersController.index);
+router.get("/orders/:id", ordersController.show);
+router.post("/orders", ordersController.save);
+router.delete("/orders/:id", ordersController.delete);
+
 module.exports = router;
