@@ -11,6 +11,44 @@ router.get("/", async (req, res) => {
     res.json(posts)
 })
 
+router.get("/search", async (req, res) => {
+    const { title, authorId, published, startDate, endDate } = req.query
+    const filter = {}
+
+    if (title) {
+        filter.title = {
+            contains: title,
+            mode: "insensitive"
+        }
+    }
+
+    if (authorId) {
+        filter.authorId = +authorId
+    }
+
+    if (published) {
+        filter.published = published === true
+    }
+
+    if (startDate || endDate) {
+        filter.createdAt = {}
+        if (startDate) {
+            filter.createdAt.gte = new Date(startDate)
+        }
+        if (endDate) {
+            filter.createdAt.lte = new Date(endDate)
+        }
+    }
+
+    console.log(`Filtros: ${filter}`)
+
+    const posts = await prisma.post.findMany({
+        where: filter
+    })
+
+    res.json(posts)
+})
+
 router.post("/", async (req, res) => {
     const newPost = await prisma.post.create({
         data: {
