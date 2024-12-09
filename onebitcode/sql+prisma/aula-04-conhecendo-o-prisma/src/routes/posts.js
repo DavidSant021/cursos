@@ -4,8 +4,16 @@ const prisma = require("../database");
 const router = Router()
 
 router.get("/", async (req, res) => {
+    const page = +req.query.page || 1
+    const pageSize = +req.query.pageSyze || 10
+
+    const skip = (page - 1) * pageSize
+    const take = page
+
     const posts = await prisma.post.findMany({
-        orderBy: { createdAt: "desc" }
+        orderBy: { createdAt: "desc" },
+        take,
+        skip
     })
 
     res.json(posts)
