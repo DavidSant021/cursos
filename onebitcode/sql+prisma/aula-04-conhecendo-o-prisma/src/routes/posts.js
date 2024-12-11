@@ -64,7 +64,10 @@ router.post("/", async (req, res) => {
             slug: req.body.slug,
             content: req.body.content,
             published: req.body.published,
-            authorId: req.body.authorId
+            authorId: req.body.authorId,
+            tags: {
+                connect: req.body.tags
+            }
         }
     })
 
@@ -82,8 +85,13 @@ router.get("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     const updatedPost = await prisma.post.update({
-        data: req.body,
-        where: { id: +req.params.id }
+        data: {
+            ...req.body,
+            tags: {
+                set: req.body.tags
+            }
+        },
+        where: { id: Number(req.params.id) }
     })
 
     res.json(updatedPost)
